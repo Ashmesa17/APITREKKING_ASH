@@ -1,5 +1,6 @@
 const express = require('express'); 
 const dbConnect = require('../database/config');
+const cors = require ('cors');
 require('../database/config.js')
 const {getUser, postUser, putUser, deleteUser}= require ('../controller/userController.js')
 const {getRoles, postRoles, putRoles, deleteRoles}= require ('../controller/rolesController.js')
