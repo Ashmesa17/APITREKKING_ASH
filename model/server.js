@@ -23,7 +23,8 @@ class Server{
     
     route (){
         this.app.use(express.json())
-
+        this.app.use(cors());
+        
         this.app.get(this.pathUser, getUser)
         this.app.post(this.pathUser, postUser)
         this.app.put(this.pathUser, putUser)
