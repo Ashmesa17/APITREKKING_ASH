@@ -1,5 +1,6 @@
 const express = require('express'); 
 const dbConnect = require('../database/config');
+const cors = require ('cors');
 require('../database/config.js')
 const {getUser, postUser, putUser, deleteUser}= require ('../controller/userController.js')
 const {getRoles, postRoles, putRoles, deleteRoles}= require ('../controller/rolesController.js')
@@ -22,9 +23,12 @@ class Server{
     }
     
     route (){
+
         this.app.use(express.json());
         this.app.use ( cors() );
 
+
+    
         this.app.get(this.pathUser, getUser)
         this.app.post(this.pathUser, postUser)
         this.app.put(this.pathUser, putUser)
