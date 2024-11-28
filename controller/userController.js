@@ -20,12 +20,13 @@ const postUser= async (req,res)=>{
 }
 
  const putUser=async (req,res)=>{ 
-    const {Name, Email} = req.body let msg= ' user update' 
+    const {Name, Email} = req.body 
+    let msg= ' user update' 
     try{ 
         await User.findOneAndUpdate({Name:Name}, {Name:Name, Email:Email}) 
     }catch(error){ msg=error } 
      res.json({msg:msg}) 
-     }
+}
 const deleteUser = async (req, res) =>{
     id= req.params.id
     let msg= 'User deleted'
