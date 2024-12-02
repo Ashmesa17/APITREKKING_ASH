@@ -3,7 +3,7 @@ const User= require('../model/user.js');
 const getUser = async (req, res)=> {
     const user = await User.find()
 
-    res.json(user)
+    res.json({user})
 }
 
 
