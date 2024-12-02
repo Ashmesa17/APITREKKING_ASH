@@ -31,12 +31,12 @@ class Server{
     
         this.app.get(this.pathUser, getUser)
         this.app.post(this.pathUser, postUser)
-        this.app.put(this.pathUser, putUser)
+        this.app.put(this.pathUser + '/:id', putUser);
         this.app.delete(this.pathUser+'/:id', deleteUser)
 
         this.app.get(this.pathRoles, getRoles)
         this.app.post(this.pathRoles, postRoles)
-        this.app.put(this.pathRoles, putRoles)
+        this.app.put(this.pathRoles + '/:id', putRoles);
         this.app.delete(this.pathRoles+'/:id', deleteRoles)
 
     }
