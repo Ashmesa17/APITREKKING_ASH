@@ -23,7 +23,7 @@ const putRoles=async (req,res)=>{
     const {Name, State} = req.body
     let msg= ' Rol update'
     try{
-        await Roles.findOneAndUpdate({Name:Name}, {State:State, Name:Name})
+        await Roles.findOneAndUpdate({id:id}, {State:State, Name:Name})
     }catch(error){
         msg=error
     }

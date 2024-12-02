@@ -23,7 +23,7 @@ const putUser=async (req,res)=>{
     const {Name, Email} = req.body
     let msg= ' user update'
     try{
-        await User.findOneAndUpdate({Name:Name}, {Email:Email, Name:Name})
+        await User.findOneAndUpdate({id:id}, {Email:Email, Name:Name})
     }catch(error){
         msg=error
     }
