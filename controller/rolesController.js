@@ -3,7 +3,7 @@ const Roles = require('../model/roles.js');
 const getRoles = async (req, res)=> {
     const roles = await Roles.find()
 
-    res.json(roles)
+    res.json({roles})
 }
 
 
