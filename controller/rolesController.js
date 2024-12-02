@@ -20,7 +20,7 @@ const postRoles= async (req,res)=>{
 }
 
 const putRoles=async (req,res)=>{
-    const {Name, State} = req.body
+    const {id, Name, State} = req.body
     let msg= ' Rol update'
     try{
         await Roles.findOneAndUpdate({id:id}, {State:State, Name:Name})

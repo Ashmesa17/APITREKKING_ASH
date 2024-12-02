@@ -20,7 +20,7 @@ const postUser= async (req,res)=>{
 }
 
 const putUser=async (req,res)=>{
-    const {Name, Email} = req.body
+    const {id, Name, Email} = req.body
     let msg= ' user update'
     try{
         await User.findOneAndUpdate({id:id}, {Email:Email, Name:Name})
