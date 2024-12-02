@@ -19,16 +19,22 @@ const postRoles= async (req,res)=>{
     res.json({msg:msg})
 }
 
-const putRoles=async (req,res)=>{
-    const {id, Name, State} = req.body
-    let msg= ' Rol update'
-    try{
-        await Roles.findOneAndUpdate({id:id}, {State:State, Name:Name})
-    }catch(error){
-        msg=error
+const putRoles = async (req, res) => {
+    const { id } = req.params; // ID desde la URL
+    const { Name, State } = req.body; // Campos a actualizar
+    let msg = 'rol updated';
+    try {
+        await Roles.findByIdAndUpdate(
+            id,
+            { Name, State }, // Campos a actualizar
+            { new: true, runValidators: true } // Devuelve el documento actualizado y valida
+        );
+    } catch (error) {
+        msg = error.message;
     }
-    res.json({msg:msg})
-}
+    res.json({ msg });
+};
+
 
 const deleteRoles = async (req, res) =>{
     let msg= 'Rol deleted'
